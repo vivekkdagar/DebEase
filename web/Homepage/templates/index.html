@@ -1,17 +1,56 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Django App</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    
+    <title>DebEase</title>
+    <link rel="stylesheet" type="text/css" href="../static/main.css">    
 </head>
 <body>
-    <!-- Your HTML content goes here -->
-    <h1> Teetinsifn </h1>
-    <script src="{% static 'Homepage/js/script.js' %}"></script>
+    <h1>DebEase</h1>
+    
+    
+        <form method="post" action="{% url 'run_page' %}">
+            
+            {% csrf_token %}
+    <div class="container">
+        <div class="buttons-container">
+            <button class="button" type="button" onclick="selectAll(1)">Recommended</button>
+            <button class="button" type="button" onclick="selectAll(2)">Optional</button>
+            <button class="button" type="button" onclick="selectAll(3)">Customization</button>
+            <button class="button" type="submit">Run</button>
+        </div>
+
+       <!-- Updated form with correct URL syntax -->
+            <div class="columns">
+                <div class="column">
+                    {{ form.login_manager }} Change default login manager
+            		    <br><br>
+            		    {{ form.kde }} Install KDE-Connect
+            		    <br><br>
+            		    {{ form.cpu_drivers }} Install microcode
+            		    <br><br>
+            		    {{ form.gpu_drivers }} Install GPU Drivers
+            		    <br><br>
+            		    {{ form.nala_install }} Replace apt with nala
+                </div>
+                <div class="column">
+                    {{ form.web_apps }} Install a WebApp Manager
+                </div> 
+                <div class="column">
+                    {{ form.terminal_starship }} Enhance terminal
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function selectAll(columnIndex) {
+             var checkboxes = document.querySelectorAll('.columns .column:nth-child(' + columnIndex + ') input[type="checkbox"]');
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = true;
+            });
+        }
+    </script>
 </body>
 </html>
