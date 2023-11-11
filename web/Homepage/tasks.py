@@ -53,3 +53,12 @@ def gpu_driv():
         print("Microcode installed successfully")
     except spr.CalledProcessError as e:
         print(f"Error: {e}")
+
+# Install nala and make it the default package manager
+def nala_pkg():
+    command="sudo bash ../cli/Recommended/apt-nala.sh"
+    try:
+        spr.run(command, shell=True, check=True)
+        print("Microcode installed successfully")
+    except spr.CalledProcessError as e:
+        print(f"Error: {e}")

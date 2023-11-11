@@ -20,6 +20,8 @@ def run_page(request):
                 cpu_firmware()
             if selected_options["gpu_drivers"]:
                 gpu_driv()
+            if selected_options["nala_install"]:
+                nala_pkg()
     else:
         form = RunForm()
     return render(request, "index.html", {'form': form})
