@@ -36,3 +36,54 @@ class RunForm(forms.Form):
         required=False,
         initial=False,
     )
+    
+    battery_saver = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    ulauncher = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    firewall = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    backup = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    custom_scrps = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    dual_boot = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    aliases = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    shortcuts = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    nemo = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+    
+    libreoffice_theme = forms.BooleanField(
+        required=False,
+        initial=False,
+    )
+   
