@@ -2,7 +2,7 @@ import subprocess as spr
 
 # Installing gdm3
 def gdm_installer():
-    command = "sudo apt install gdm3"
+    command = "sudo apt install gdm3 -y"
     try:
         spr.run(command, shell=True, check=True)
         print("gdm3 installed successfully.")
@@ -11,7 +11,7 @@ def gdm_installer():
 
 # Installing KDE-Connect
 def kde_connect():
-    command = "sudo apt install kdeconnect"
+    command = "sudo apt install kdeconnect -y"
     try:
         spr.run(command, shell=True, check=True)
         print("KDEConnect installed successfully.")
@@ -60,5 +60,32 @@ def nala_pkg():
     try:
         spr.run(command, shell=True, check=True)
         print("Microcode installed successfully")
+    except spr.CalledProcessError as e:
+        print(f"Error: {e}")
+        
+# Setup tlp battery saver
+def setup_tlp():
+    command="sudo bash ../cli/Recommended/battery-saver.sh"
+    try:
+        spr.run(command, shell=True, check=True)
+        print("Battery saver installed successfully")
+    except spr.CalledProcessError as e:
+        print(f"Error: {e}")
+        
+# Installing KDE-Connect
+def timeshift():
+    command = "sudo apt install timeshift -y"
+    try:
+        spr.run(command, shell=True, check=True)
+        print("KDEConnect installed successfully.")
+    except spr.CalledProcessError as e:
+        print(f"Error: {e}")
+        
+# Setup tlp battery saver
+def setup_ufw():
+    command="sudo bash ../cli/Recommended/ufw-firewall.sh"
+    try:
+        spr.run(command, shell=True, check=True)
+        print("Battery saver installed successfully")
     except spr.CalledProcessError as e:
         print(f"Error: {e}")
