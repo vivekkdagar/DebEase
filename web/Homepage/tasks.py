@@ -59,7 +59,7 @@ def nala_pkg():
     command="sudo bash ../cli/Recommended/apt-nala.sh"
     try:
         spr.run(command, shell=True, check=True)
-        print("Microcode installed successfully")
+        print("nala installed successfully")
     except spr.CalledProcessError as e:
         print(f"Error: {e}")
         
@@ -87,5 +87,13 @@ def setup_ufw():
     try:
         spr.run(command, shell=True, check=True)
         print("Battery saver installed successfully")
+    except spr.CalledProcessError as e:
+        print(f"Error: {e}")
+
+def setup_ulauncher():
+    command="sudo bash ../cli/Recommended/setup-ulauncher.sh"
+    try:
+        spr.run(command, shell=True, check=True)
+        print("appLauncher installed successfully")
     except spr.CalledProcessError as e:
         print(f"Error: {e}")
