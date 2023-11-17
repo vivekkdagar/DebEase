@@ -81,7 +81,7 @@ def timeshift():
     except spr.CalledProcessError as e:
         print(f"Error: {e}")
         
-# Setup tlp battery saver
+# Setup ufw firewall
 def setup_ufw():
     command="sudo bash ../cli/Recommended/ufw-firewall.sh"
     try:
