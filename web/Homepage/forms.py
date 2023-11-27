@@ -65,12 +65,7 @@ class RunForm(forms.Form):
     aliases = forms.BooleanField(
         required=False,
         initial=False,
-    )
-    
-    nemo = forms.BooleanField(
-        required=False,
-        initial=False,
-    )
+    )    
     
     libreoffice_theme = forms.BooleanField(
         required=False,

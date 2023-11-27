@@ -6,4 +6,4 @@ rm ulau*
 
 # Configuration
 rm ~/.config/ulauncher
-cp -r ../../resources/ulauncher ~/.config/ulauncher
+cp -r ../resources/ulauncher ~/.config/ulauncher
