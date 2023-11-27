@@ -62,11 +62,6 @@ class RunForm(forms.Form):
         initial=False,
     )
     
-    dual_boot = forms.BooleanField(
-        required=False,
-        initial=False,
-    )
-    
     aliases = forms.BooleanField(
         required=False,
         initial=False,

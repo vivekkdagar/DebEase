@@ -28,7 +28,13 @@ def mint_webapp():
 
 # Customize terminal
 def theme_terminal():
-    execute("sudo ../backend/terminal-theme.sh")
+    execute("sudo apt install curl wget build-essential -y")
+    execute("curl -sS https://webi.sh/nerdfont | sh")
+    execute("source ~/.bashrc")
+    execute("curl -sS https://starship.rs/install.sh | sh")
+    init_starship = 'eval "$(starship init bash)"'
+    execute(f"sudo echo {init_starship} >> ~/.bashrc")
+    execute("starship preset no-nerd-font -o ~/.config/starship.toml")
     print("Terminal customized successfully.")
 
 # CPU Firmware (Microcode)
@@ -43,7 +49,8 @@ def gpu_driv():
     
 # Install nala and make it the default package manager
 def nala_pkg():
-    execute("sudo bash ../backend/apt-nala.sh")
+    execute("sudo apt install nala -y")
+    execute("sudo cat ../resources/nala* >> ~/.bashrc")
     print("nala installed successfully.")
 
 # Setup tlp battery saver
@@ -75,11 +82,6 @@ def nemo():
 def custom_scripts():
     execute("sudo bash ../backend/custom-scrpts.sh")
     print("Custom scripts are located at ~/Documents/.")
-
-# Set dual boot
-def grub_setup():
-    execute("sudo bash ../backend/grub-modify.sh")
-    print("Grub modified successfully.")
 
 # Theme libreoffice
 def libre_office():
