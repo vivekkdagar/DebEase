@@ -30,7 +30,6 @@ def mint_webapp():
 def theme_terminal():
     execute("sudo apt install curl wget build-essential -y")
     execute("curl -sS https://webi.sh/nerdfont | sh")
-    execute("source ~/.bashrc")
     execute("curl -sS https://starship.rs/install.sh | sh")
     init_starship = 'eval "$(starship init bash)"'
     execute(f"sudo echo {init_starship} >> ~/.bashrc")
@@ -70,20 +69,16 @@ def setup_ulauncher():
 
 # Setup terminal aliases
 def aliases():
-    execute("sudo bash ../backend/setup-aliases.sh")
+    execute("sudo apt install neovim bat findutils nala trash-cli htop exa multitail tree joe git")
+    execute("sudo cat ../resources/aliases* >> ~/.bashrc")
     print("Terminal aliases set successfully.")
-
-# Cusstomize nemo file manager
-def nemo():
-    execute("sudo bash ../backend/setup-nemo.sh")
-    print("Nemo file manager setup successfully.")
 
 # Set custom scripts
 def custom_scripts():
-    execute("sudo bash ../backend/custom-scrpts.sh")
-    print("Custom scripts are located at ~/Documents/.")
+    print("Custom Scripts can be found at project/resources/scripts location. Copy the ones you need from there and paste them to /usr/bin to make them recognizable by the terminal")
 
 # Theme libreoffice
 def libre_office():
-    execute("sudo bash ../backend/libre-office.sh")
+    execute("rm -rf ~/.config/libreoffice")
+    execute("cp -r ../resources/libreoffice ~/.config/")
     print("Setup libreoffice done successfully.")

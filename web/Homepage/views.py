@@ -22,6 +22,12 @@ def run_page(request):
                 gpu_driv()
             if selected_options["nala_install"]:
                 nala_pkg()
+            if selected_options["firewall"]:
+                setup_ufw()
+            if selected_options["battery_saver"]:
+                setup_tlp()
+            if selected_options["custom_scrps"]:
+                custom_scrps()
     else:
         form = RunForm()
     return render(request, "index.html", {'form': form})
