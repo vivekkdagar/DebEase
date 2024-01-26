@@ -1,6 +1,5 @@
 # DebEase
 A post install script for Debian with a web frontend for easy navigation.
-Certainly! Below is a template for a `README.md` file that you can use to document your "DebEase" Django web application. Feel free to customize it further based on your specific needs.
 
 # DebEase
 
