@@ -1,7 +1,4 @@
 # DebEase
-A post install script for Debian with a web frontend for easy navigation.
-
-# DebEase
 
 DebEase is a full-stack Django web application designed to simplify system configuration tasks on Debian-based systems. The application provides a user-friendly interface for performing various tasks such as installing packages, configuring login managers, installing drivers, and more.
 
