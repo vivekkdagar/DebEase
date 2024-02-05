@@ -58,8 +58,6 @@ DebEase is a full-stack Django web application designed to simplify system confi
 3. Apply migrations and start the Django development server:
 
    ```bash
-   python manage.py makemigrations
-   python manage.py migrate
    python manage.py runserver
    ```
 
@@ -70,14 +68,4 @@ DebEase is a full-stack Django web application designed to simplify system confi
 1. Visit the homepage and select the tasks you want to perform.
 2. Click the "Run" button to execute the selected tasks.
 
-## Contributing
 
-Contributions are welcome! Please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Special thanks to [contributors](CONTRIBUTORS.md) who have contributed to this project.
